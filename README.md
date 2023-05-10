@@ -70,3 +70,10 @@ transforms.xml_value.schema.path = http://web.address/my.xsd
 "transforms.xml_value.type": "com.github.jcustenborder.kafka.connect.transform.xml.FromXml$Value",
 "transforms.xml_value.schema.path": "< Configure me >"
 ```
+
+
+#### Build with Docker
+
+```
+docker run -i --rm -v "${PWD}/kafka-connect-transform-xml":/usr/src/mymaven -v "/Users/vsaboulin/Documents/github/kafka-docker-playground/scripts/settings.xml:/tmp/settings.xml" -v "$HOME/.m2":/root/.m2  -v "${PWD}/kafka-connect-transform-xml/target:/usr/src/mymaven/target" -w /usr/src/mymaven maven:3.6.1-jdk-11 mvn -s /tmp/settings.xml install -DskipTests -Dmaven.javadoc.skip=true
+```
